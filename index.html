@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clue Trasure Hunt</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Tahoma;
+        transition: all 0.2s linear;
+        text-transform: capitalize;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vw;
+        width: 100vw;
+        background: url(kmc_20230525_202033.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+
+      #open {
+        height: 50px;
+        width: 180px;
+        background: #fff;
+        color: #333;
+        font-size: 25px;
+        cursor: pointer;
+        letter-spacing: 2px;
+        outline: none;
+        border: none;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      #open:hover {
+        letter-spacing: 4px;
+        opacity: 0.8;
+      }
+
+      .model-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.3);
+        transform: scale(0);
+      }
+
+      .model-container .model {
+        height: 400px;
+        max-width: 350px;
+        margin: 0 10px;
+        padding: 20px;
+        background: #fff;
+        border-radius: 5px;
+        text-align: center;
+        position: relative;
+      }
+
+      .model-container .model .fa-heart {
+        font-size: 100px;
+        color: #f9ca24;
+        padding-bottom: 50px;
+        margin: 10px 0;
+        text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3), 30px 30px 0 red,
+          -30px 30px 0 blue;
+      }
+
+      .model-container .model h3 {
+        color: #333;
+        font-size: 25px;
+      }
+
+      .model-container .model p {
+        color: #666;
+        margin: 20px 0;
+      }
+
+      .model-container .model button {
+        height: 35px;
+        width: 120px;
+        background: #333;
+        color: #fff;
+        outline: none;
+        border: none;
+        border-radius: 50px;
+        font-size: 17px;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .model-container .model button:hover {
+        opacity: 0.8;
+      }
+
+      .model-container .model .fa-times {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 25px;
+        cursor: pointer;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button id="open">Click This</button>
+    </div>
+
+    <div class="model-container">
+      <div class="model">
+        <i class="fas fa-heart"></i>
+        <h3>Clue!</h3>
+        <p>Terdapat Dipojokan</p>
+        <button>yes</button>
+        <button>cancel</button>
+        <i id="close" class="fas fa-times"></i>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+      integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#open").click(function () {
+          $(".model-container").css("transform", "scale(1)");
+        });
+
+        $("#close").click(function () {
+          $(".model-container").css("transform", "scale(0)");
+        });
+      });
+    </script>
+  </body>
+</html>
